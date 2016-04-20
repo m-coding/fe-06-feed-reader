@@ -21,6 +21,11 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
+        // credit for url pattern: https://t.co/FOGTD8mlAn
+        var urlRegex = new RegExp(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/);
+        var length = allFeeds.length;
+        var i = 0;
+
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
@@ -31,13 +36,8 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-        it('has an URL defined and is not empty', function() {
-            // credit for url pattern: https://t.co/FOGTD8mlAn
-            var urlRegex = new RegExp(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/);
-            var length = allFeeds.length;
-            var i = 0;
-
-            for(i; i < length; i++) {
+        it('has a valid URL defined', function() {
+            for(i=0; i < length; i++) {
                 expect(allFeeds[i].url).toBeDefined();
                 expect(allFeeds[i].url).toMatch(urlRegex);
             }
@@ -49,6 +49,13 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+        it('has a valid name defined', function() {
+            for(i=0; i < length; i++) {
+                expect(allFeeds[i].name).toBeDefined();
+                expect(allFeeds[i].name.length).toBeGreaterThan(0);
+            }
+        });
+
     });
 
 
