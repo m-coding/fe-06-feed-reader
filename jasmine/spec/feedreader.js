@@ -32,12 +32,14 @@ $(function() {
          * and that the URL is not empty.
          */
         it('has an URL defined and is not empty', function() {
+            // credit for url pattern: https://t.co/FOGTD8mlAn
+            var urlRegex = new RegExp(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/);
             var length = allFeeds.length;
             var i = 0;
 
             for(i; i < length; i++) {
-                expect( allFeeds[i].hasOwnProperty('url') ).toBeDefined();
-                expect( allFeeds[i].url.length ).toBeGreaterThan(0);
+                expect(allFeeds[i].url).toBeDefined();
+                expect(allFeeds[i].url).toMatch(urlRegex);
             }
 
         });
