@@ -109,6 +109,16 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
+        var $container = $('.feed');
+
+        beforeEach(function(done) {
+            loadFeed(0, done);
+        });
+
+        it('has at least one entry', function() {
+            expect($container.find('.entry').length).toBeGreaterThan(0);
+        });
+
 
     }); // Initial Entries
 
