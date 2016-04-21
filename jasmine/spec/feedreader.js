@@ -115,8 +115,9 @@ $(function() {
             loadFeed(0, done);
         });
 
-        it('has at least one entry', function() {
+        it('has at least one entry', function(done) {
             expect($container.find('.entry').length).toBeGreaterThan(0);
+            done();
         });
 
 
