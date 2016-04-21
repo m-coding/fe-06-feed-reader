@@ -87,11 +87,11 @@ $(function() {
                 $icon.trigger('click');
             });
 
-            it('will show the menu', function() {
+            it('will show it', function() {
                 expect($body.hasClass('menu-hidden')).toBe(false);
             });
 
-            it('will hide the menu', function() {
+            it('will hide it', function() {
                 expect($body.hasClass('menu-hidden')).toBe(true);
             });
 
@@ -100,6 +100,7 @@ $(function() {
     }); // The menu
 
     /* TODO: Write a new test suite named "Initial Entries" */
+    describe('Initial Entries', function() {
 
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -107,6 +108,10 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+
+
+    }); // Initial Entries
+
 
     /* TODO: Write a new test suite named "New Feed Selection"
 
